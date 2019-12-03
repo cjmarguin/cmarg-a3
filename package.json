@@ -4,6 +4,7 @@
   "description": "Claudia's 3rd SS Assignment",
   "main": "app.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
