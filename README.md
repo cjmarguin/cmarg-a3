@@ -18,7 +18,9 @@ Create Procfile  >> web: npm start
 
 app.js
 
-index.ejs >> views
+index.ejs >> viewss
 
 styles >> public
 
+git checkout -b
+git merge origin master

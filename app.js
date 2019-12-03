@@ -11,7 +11,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true}));
 
 
-app.get('/', function(req, res){
+/* app.get('/', function(req, res){
     let url = 'https:https://xkcd.com/info.0.json';
     let img;
     nodeFetch(url)
@@ -24,7 +24,9 @@ app.get('/', function(req, res){
         console.log(err);
         res.render('index');
     });
-});
+}); */
+
+
 
 http.createServer(app).listen(port, function(){
 
