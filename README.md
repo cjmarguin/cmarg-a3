@@ -24,3 +24,4 @@ styles >> public
 
 git checkout -b
 git merge origin master
+get push origin
