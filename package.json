@@ -1,0 +1,19 @@
+{
+  "name": "cmarg-a3",
+  "version": "1.0.0",
+  "description": "Claudia's 3rd SS Assignment",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cjmarguin/cmarg-a3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cjmarguin/cmarg-a3/issues"
+  },
+  "homepage": "https://github.com/cjmarguin/cmarg-a3#readme"
+}
