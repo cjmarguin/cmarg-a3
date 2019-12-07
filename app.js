@@ -44,14 +44,14 @@ app.get('/', function(req, res){
 //route to random.ejs
 app.get('/rand', function(req, res){
 
-    res.render("random", {ranComicTitle:ranComicTitle, ranComicYear:ranComicYear, ranComicResponse:ranComicResponse, comicImg:comicImg, ranComicImg:ranComicImg, newURL:newURL, origComicTitle:origComicTitle, origComicYear:origComicYear});
+    res.render("rand", {ranComicTitle:ranComicTitle, ranComicYear:ranComicYear, ranComicResponse:ranComicResponse, comicImg:comicImg, ranComicImg:ranComicImg, newURL:newURL, origComicTitle:origComicTitle, origComicYear:origComicYear});
 
 });
 
 
 
    //get random image url//
-app.post('/randomComic', function(req, res){
+app.post('/rand', function(req, res){
 
    //get random comic
 var randomNum = Math.floor((Math.random() * 1200) + 1);
