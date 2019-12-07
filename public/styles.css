@@ -12,3 +12,7 @@ nav.navbar.navbar-light{
 #my-button.btn.btn-primary.btn-lg.btn-block{
     font-family: "Courier New", Courier, monospace;
 }
+
+.btn-primary {
+    background-color: #e6faff;
+}
