@@ -9,6 +9,8 @@ footer {
 
 nav.navbar.navbar-light{
     background-color: #e3f2fd;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
 }
 
 #my-button.btn.btn-primary.btn-lg.btn-block{
@@ -21,3 +23,4 @@ nav.navbar.navbar-light{
 .jumbotron.text-center {
     color: #0B81A5;
 }
+
