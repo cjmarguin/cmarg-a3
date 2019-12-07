@@ -11,16 +11,22 @@
     "type": "git",
     "url": "git+https://github.com/cjmarguin/cmarg-a3.git"
   },
-  "author": "",
+  "author": "Claudia 'Cj' Marguin",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/cjmarguin/cmarg-a3/issues"
   },
   "homepage": "https://github.com/cjmarguin/cmarg-a3#readme",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "ejs": "^2.7.1",
-    "express": "^4.17.1",
-    "node-fetch": "^2.6.0"
-  }
+  "engines": {
+    "node": "10.x"
+  },
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "ejs": "^2.7.1",
+        "express": "^4.17.1",
+        "node-fetch": "^2.6.0",
+        "http": "0.0.0",
+        "https": "^1.0.0",
+        "request": "^2.88.0"
+    }
 }

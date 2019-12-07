@@ -1,0 +1,30 @@
+h3,h4 {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    background-color: #e3f2fd;
+    font-family: "Courier New", Courier, monospace;
+   
+}
+
+nav.navbar.navbar-light{
+    background-color: #e3f2fd;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+}
+
+#my-button.btn.btn-primary.btn-lg.btn-block{
+    font-family: "Courier New", Courier, monospace;
+    background-color: #e6faff;
+    border-color: #e6faff;
+    color: black;
+}
+
+.jumbotron.text-center {
+    color: #0B81A5;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+}
+

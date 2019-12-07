@@ -2,40 +2,80 @@ var http = require('http');
 var path = require('path');
 const express = require("express");
 var bodyParser = require("body-parser");
+var request = require('request');
+var https = require('https');
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.set('views', path.join(__dirname, 'views'));
 app.set("view engine", "ejs");
-app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.urlencoded({ encoded: true}));
-var task = ["clean", "cook"];
-var complete = ["eat", "sleep"];
+app.use(express.static("public"));
+app.use(express.json());
 
+//get original comic
+var url = 'https://xkcd.com/614/info.0.json';
+var comicImg;
+var ranComicImg;
+var ranComicTitle;
+var ranComicYear;
+var newURL;
+var origComicTitle;
+var origComicYear;
+var ranComicResponse;
+//var randomPage = app.render("random");
 
+request(url, (error, response, body)=> {
+
+    var comicResponse = JSON.parse(body);
+    comicImg = comicResponse.img;
+    origComicTitle = comicResponse.title;
+    origComicYear = comicResponse.year;
+    console.log(comicImg);
+});
+
+//route to index.ejs
 app.get('/', function(req, res){
-    res.render('index',{task:task, complete:complete});
+
+    res.render("index", {ranComicTitle:ranComicTitle, ranComicYear:ranComicYear, ranComicResponse:ranComicResponse, comicImg:comicImg, ranComicImg:ranComicImg, newURL:newURL, origComicTitle:origComicTitle, origComicYear:origComicYear});
+
+});
+//route to random.ejs
+app.get('/rand', function(req, res){
+
+    res.render("rand", {ranComicTitle:ranComicTitle, ranComicYear:ranComicYear, ranComicResponse:ranComicResponse, comicImg:comicImg, ranComicImg:ranComicImg, newURL:newURL, origComicTitle:origComicTitle, origComicYear:origComicYear});
+
 });
 
-app.post('/addtask', function(req, res){
-    var newTask = req.body.newtask;
-    task.push(newTask);
-    res.redirect("/");
+
+
+   //get random image url//
+app.post('/rand', function(req, res){
+
+   //get random comic
+var randomNum = Math.floor((Math.random() * 1200) + 1);
+var firstURL = 'https://xkcd.com/';
+var lastURL = '/info.0.json';
+var newURL = firstURL + randomNum + lastURL;
+
+request(newURL, (error, response, body)=> {
+
+    ranComicResponse = JSON.parse(body);
+    ranComicImg = ranComicResponse.img;
+    ranComicTitle = ranComicResponse.title;
+    ranComicYear = ranComicResponse.year;
+    console.log(ranComicImg);
+    console.log(ranComicTitle);
+    console.log(ranComicYear);
 });
 
-app.post('/removetask', function(req, res){
-    var completeTask = req.body.check;
-    if(typeof completeTask === "string"){
-        complete.push(completeTask);
-        task.splice(task.indexOf(completeTask), 1);
-    }else if(typeof completeTask === "object"){
-        for(var i = 0; i < completeTask.length ; i++){
-            complete.push(completeTask[i]);
-            task.splice(task.indexOf(completeTask[i]), 1);
-        }
-    }
-    res.redirect("/");
+    //sends JSON body to AJAX Call
+    res.send(ranComicResponse);
+
+
 });
+
 
 http.createServer(app).listen(port, function(){
 
