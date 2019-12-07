@@ -41,8 +41,8 @@ app.get('/', function(req, res){
     res.render("index", {ranComicTitle:ranComicTitle, ranComicYear:ranComicYear, ranComicResponse:ranComicResponse, comicImg:comicImg, ranComicImg:ranComicImg, newURL:newURL, origComicTitle:origComicTitle, origComicYear:origComicYear});
 
 });
-//route to random.ejs
-app.get('/random', function(req, res){
+//route to rand.ejs
+app.get('/rand', function(req, res){
 
     res.render("random", {ranComicTitle:ranComicTitle, ranComicYear:ranComicYear, ranComicResponse:ranComicResponse, comicImg:comicImg, ranComicImg:ranComicImg, newURL:newURL, origComicTitle:origComicTitle, origComicYear:origComicYear});
 
@@ -51,7 +51,7 @@ app.get('/random', function(req, res){
 
 
    //get random image url//
-app.post('/randomComic', function(req, res){
+app.post('/rand', function(req, res){
 
    //get random comic
 var randomNum = Math.floor((Math.random() * 1200) + 1);
